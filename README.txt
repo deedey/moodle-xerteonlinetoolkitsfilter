@@ -1,0 +1,1 @@
+use XOT[url] where url is the URL of the xerte piece you wish to embed
