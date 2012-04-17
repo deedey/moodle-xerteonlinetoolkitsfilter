@@ -14,11 +14,11 @@ class filter_xerteonlinetoolkits extends moodle_text_filter {
             return $text;
         }
 		
-		$search = '/XOT\[([a-zA-z0-9\.\-\/_:]+)\]/';
+		$search = '/' . str_replace("/","\/",$CFG->filter_xerteonlinetoolkits_baseurl) . '([0-9]+)/';
 		
-		$newtext = preg_replace($search, "<iframe height='680' width='900' src='$1' />", $text);
+		$newtext = preg_replace($search, "<iframe height='680' width='900' src='" . $CFG->filter_xerteonlinetoolkits_baseurl . "$1' />", $text);
 
-        return  $newtext;
+        return $newtext;
     }
 	
 }
