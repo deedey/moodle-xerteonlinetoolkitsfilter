@@ -28,5 +28,10 @@ if ($ADMIN->fulltree) {
 												  PARAM_RAW,
 												  100, 
 												  3));
+												  
+  $settings->add(new admin_setting_configcheckbox('filter_xerteonlinetoolkits_allurls',
+            get_string('xerteonlinetoolkits_allfilters','filter_xerteonlinetoolkits'),
+            get_string('xerteonlinetoolkits_allfilters_desc','filter_xerteonlinetoolkits'),
+            1));
 }
 
