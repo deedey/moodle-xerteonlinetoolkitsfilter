@@ -4,7 +4,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir.'/filelib.php');
 
-class filter_xerteonlinetoolkits extends moodle_text_filter {
+class filter_xerteonlinetoolkitsfilter extends moodle_text_filter {
 
     function filter($text, array $options = array()) {
 	
@@ -17,15 +17,15 @@ class filter_xerteonlinetoolkits extends moodle_text_filter {
 		
 		//echo "***" . $CFG->filter_xerteonlinetoolkits_allurls . "***<br />";
 		
-		if($CFG->filter_xerteonlinetoolkits_allurls==1){
+		if($CFG->filter_xerteonlinetoolkitsfilter_allurls==1){
 		
 			$newtext = preg_replace("/XOT\[(.+[0-9]+)\]/", "|||$1***", $text);
 			
 			$newtext = str_replace("|||http","|||",$newtext);
 		
-			$search = '/' . str_replace("/","\/",str_replace("?","\?",$CFG->filter_xerteonlinetoolkits_baseurl)) . '([0-9]+)/';
+			$search = '/' . str_replace("/","\/",str_replace("?","\?",$CFG->filter_xerteonlinetoolkitsfilter_baseurl)) . '([0-9]+)/';
 			
-			$newtext = preg_replace($search, "<iframe height='680' width='900' src='" . $CFG->filter_xerteonlinetoolkits_baseurl . "$1'></iframe>", $newtext);
+			$newtext = preg_replace($search, "<iframe height='680' width='900' src='" . $CFG->filter_xerteonlinetoolkitsfilter_baseurl . "$1'></iframe>", $newtext);
 			
 			$newtext = str_replace("|||", "<iframe height='680' width='900' src='http", str_replace("***", "'></iframe>", $newtext));
 			

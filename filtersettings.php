@@ -14,24 +14,20 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- *  Mediaplugin filter settings
- */
-
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-  $settings->add(new admin_setting_configtextarea('filter_xerteonlinetoolkits_baseurl', 
-												  get_string('xerteonlinetoolkits_baseurl','filter_xerteonlinetoolkits'),
-												  get_string('xerteonlinetoolkits_config', 'filter_xerteonlinetoolkits'),  
-												  get_string('xerteonlinetoolkits_default', 'filter_xerteonlinetoolkits'), 
+  $settings->add(new admin_setting_configtextarea('filter_xerteonlinetoolkitsfilter_baseurl', 
+												  get_string('xerteonlinetoolkitsfilter_baseurl','filter_xerteonlinetoolkitsfilter'),
+												  get_string('xerteonlinetoolkitsfilter_config', 'filter_xerteonlinetoolkitsfilter'),  
+												  get_string('xerteonlinetoolkitsfilter_default', 'filter_xerteonlinetoolkitsfilter'), 
 												  PARAM_RAW,
 												  100, 
 												  3));
 												  
-  $settings->add(new admin_setting_configcheckbox('filter_xerteonlinetoolkits_allurls',
-            get_string('xerteonlinetoolkits_allfilters','filter_xerteonlinetoolkits'),
-            get_string('xerteonlinetoolkits_allfilters_desc','filter_xerteonlinetoolkits'),
+  $settings->add(new admin_setting_configcheckbox('filter_xerteonlinetoolkitsfilter_allurls',
+            get_string('xerteonlinetoolkitsfilter_allfilters','filter_xerteonlinetoolkitsfilter'),
+            get_string('xerteonlinetoolkitsfilter_allfilters_desc','filter_xerteonlinetoolkitsfilter'),
             1));
 }
 
